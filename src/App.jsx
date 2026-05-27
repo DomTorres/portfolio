@@ -8,7 +8,7 @@ import Skills from './public/Skills';
 
 function App() {
     useEffect(() => {
-        document.title = 'Dom-ain Name';
+        document.title = 'Portfolio | Dom Torres';
       }, []);
 
       useEffect( () => {
