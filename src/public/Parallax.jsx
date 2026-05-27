@@ -1,7 +1,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 
 const Parallax = () => {
+    const baseUrl = import.meta.env.BASE_URL;
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -18,15 +19,15 @@ const Parallax = () => {
     >
       <motion.h1 
         style={{ y: textY }}
-        className='font-heading text-white text-9xl tracking-tight absolute top-40 md:text-9xl z-10'>
-        Hi! I'm Dom Torres.
+        className='absolute top-28 z-10 max-w-[96vw] whitespace-nowrap text-center font-heading text-5xl text-white tracking-tight sm:top-36 sm:text-6xl md:text-7xl lg:top-40 lg:text-8xl xl:text-9xl'>
+        Hi! I&apos;m Dom Torres.
       </motion.h1>
 
       <motion.div 
         className='absolute inset-0 z-0'
         style={{
             y: backgroundY,
-            backgroundImage: `url(https://domtorres.github.io/portfolio/vancouver.jpg)`,
+            backgroundImage: `url(${baseUrl}vancouver.jpg)`,
             backgroundPosition: 'top',
             backgroundSize: 'cover' 
         }}
@@ -35,7 +36,7 @@ const Parallax = () => {
       <div 
         className='absolute inset-0 z-20'
         style={{
-            backgroundImage: `url(https://domtorres.github.io/portfolio/vancouver-without-bg.png)`,
+            backgroundImage: `url(${baseUrl}vancouver-without-bg.png)`,
             backgroundPosition: 'top',
             backgroundSize: 'cover'   
         }}
